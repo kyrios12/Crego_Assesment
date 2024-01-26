@@ -6,6 +6,7 @@ import ExpressionForm from './App';
 const App = () => {
   const handleSubmit = (output) => {
     console.log(output); // Placeholder for handling the output
+
   };
 
   return (
