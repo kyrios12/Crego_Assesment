@@ -40,6 +40,17 @@ const handleSubmit = (event) => {
       isValid = false;
     }
   });
+    // Validate the form
+    if (form.checkValidity() && isValid) {
+      // Preparing the rules based on form data
+      const rules = state.expressions.map(expression => ({
+        key: expression.ruleType.toLowerCase().replace(' ', '_'),
+        output: {
+          value: parseFloat(expression.value),
+          operator: expression.operator,
+          score: parseInt(expression.score)
+        }
+      }));
   return (
     <Container >
       <h1>Expression Engine</h1>
