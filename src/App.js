@@ -8,11 +8,17 @@ export default function ExpressionForm(){
     expressions: [{ ruleType: 'Age', operator: '>=', value: '', score: '' }],
   };
   const [state, updateState] = useImmer(initialState);
-  const handleConnectorChange = (e) => { /* Logic for handling connector type change */ };
-const handleExpressionChange = (index, field, value) => { /* Logic for handling expression field change */ };
-const handleAddExpression = () => { /* Logic for adding a new expression */ };
-const handleDeleteExpression = (index) => { /* Logic for deleting an expression */ };
-const handleSubmit = (event) => { /* Logic for handling form submission */ };
+  
+ const handleConnectorChange = (e) => {
+  updateState((draft) => {
+    draft.connectorType = e.target.value;
+  });
+};
+const handleExpressionChange = (index, field, value) => {
+  updateState((draft) => {
+    draft.expressions[index][field] = value;
+  });
+};
 
   return (
     <Container >
