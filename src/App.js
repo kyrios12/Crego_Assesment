@@ -8,7 +8,7 @@ export default function ExpressionForm(){
     expressions: [{ ruleType: 'Age', operator: '>=', value: '', score: '' }],
   };
   const [state, updateState] = useImmer(initialState);
-  
+
  const handleConnectorChange = (e) => {
   updateState((draft) => {
     draft.connectorType = e.target.value;
@@ -17,6 +17,16 @@ export default function ExpressionForm(){
 const handleExpressionChange = (index, field, value) => {
   updateState((draft) => {
     draft.expressions[index][field] = value;
+  });
+};
+const handleAddExpression = () => {
+  updateState((draft) => {
+    draft.expressions.push({ ruleType: 'Age', operator: '>=', value: '', score: '' });
+  });
+};
+const handleDeleteExpression = (index) => {
+  updateState((draft) => {
+    draft.expressions.splice(index, 1);
   });
 };
 
