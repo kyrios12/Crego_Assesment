@@ -29,7 +29,17 @@ const handleDeleteExpression = (index) => {
     draft.expressions.splice(index, 1);
   });
 };
-
+const handleSubmit = (event) => {
+  const form = event.currentTarget;
+  event.preventDefault();
+  event.stopPropagation();
+  let isValid = true;
+  // Check for empty values in expressions
+  state.expressions.forEach(expression => {
+    if (expression.value === '' || expression.score === '') {
+      isValid = false;
+    }
+  });
   return (
     <Container >
       <h1>Expression Engine</h1>
