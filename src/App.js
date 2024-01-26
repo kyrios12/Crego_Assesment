@@ -1,12 +1,13 @@
 import { Button, Form, Dropdown, Container, Row, Col} from 'react-bootstrap';
 import { useState} from 'react';
+import {useImmer} from 'use-immer';
 
 export default function ExpressionForm(){
   const initialState = {
     connectorType: 'AND',
     expressions: [{ ruleType: 'Age', operator: '>=', value: '', score: '' }],
   };
-  const [state, setState] = useState(initialState);
+  const [state, updateState] = useImmer(initialState);
   const handleConnectorChange = (e) => { /* Logic for handling connector type change */ };
 const handleExpressionChange = (index, field, value) => { /* Logic for handling expression field change */ };
 const handleAddExpression = () => { /* Logic for adding a new expression */ };
