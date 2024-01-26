@@ -7,6 +7,7 @@ export default function ExpressionForm(){
     expressions: [{ ruleType: 'Age', operator: '>=', value: '', score: '' }],
   };
   const [state, setState] = useState(initialState);
+
   return (
     <Container >
       <h1>Expression Engine</h1>
