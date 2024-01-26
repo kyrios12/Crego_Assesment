@@ -134,7 +134,7 @@ export default function ExpressionForm({ onSubmit }){
                 </Form.Group>
               </Col>
 
-              {/* Render value and score fields with validation */}
+              {/* Rendering value and score fields with validation */}
               <Col>
                 <Form.Group controlId={`value${index}`}>
                   <Form.Label>Value</Form.Label>
