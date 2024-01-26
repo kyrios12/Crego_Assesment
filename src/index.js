@@ -1,10 +1,18 @@
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
-import React from 'react';
-import ExpressionForm from './App';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import ExpressionForm from './ExpressionForm';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <ExpressionForm />
-  </React.StrictMode>
-);
+const App = () => {
+  const handleSubmit = (output) => {
+    console.log(output); // Placeholder for handling the output
+  };
+
+  return (
+    <div>
+      <ExpressionForm onSubmit={handleSubmit} />
+    </div>
+  );
+};
+
+ReactDOM.render(<App />, document.getElementById('root'));
