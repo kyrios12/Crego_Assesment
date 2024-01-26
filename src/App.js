@@ -73,7 +73,7 @@ export default function ExpressionForm(){
           </div>
         
 
-        <Button variant="primary" onClick={""} >
+        <Button variant="outline-primary" onClick={""} >
           Add Expression
         </Button>
 
