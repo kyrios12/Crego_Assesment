@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import ExpressionForm from './ExpressionForm';
+import ExpressionForm from './App';
 
 const App = () => {
   const handleSubmit = (output) => {
